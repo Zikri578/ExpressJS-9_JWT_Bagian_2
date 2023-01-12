@@ -1,0 +1,32 @@
+### User Register
+POST http://localhost:9000/user/register
+Content-Type: application/json
+
+{
+    "email" : "hahhahihi@gmail.com",
+    "password" : "sayabelajarjavascript"
+}
+
+### User Login
+POST http://localhost:9000/user/login
+Content-Type: application/json
+
+{
+    "email" : "hahhahihi@gmail.com",
+    "password" : "sayabelajarjavascript"
+}
+
+### Membuat Note
+POST http://localhost:9000/notes/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYWhoYWhpaGlAZ21haWwuY29tIiwiaWF0IjoxNjczNTAzODMxfQ.VRd3qkZ8en9w2alJjwCud_PVUtQuJFfDGF44X0rPRDo
+
+{
+    "title" : "ini adalah judul kelima saya",
+    "content" : "ini adalah content ganteng saya"
+}
+
+### Membaca Note
+GET http://localhost:9000/notes/read
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYWhoYWhpaGlAZ21haWwuY29tIiwiaWF0IjoxNjczNTAzODMxfQ.VRd3qkZ8en9w2alJjwCud_PVUtQuJFfDGF44X0rPRDo

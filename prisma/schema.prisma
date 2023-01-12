@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// membuat database users
+model Users {
+  //tabel, tipe data, keterangan
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  // relasi antar tabel -> //nama model : 
+  notes Notes[]
+}
+
+// membuat database notes
+model Notes {
+  // tabel, tipe data, keterangan
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  // author    String
+  user_id   Int
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  // relation -> nama model
+  user Users @relation(fields: [user_id], references: [id])
+}
